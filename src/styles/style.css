@@ -1,0 +1,123 @@
+@import "./theme.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* Header and Footer */
+
+hgroup > p {
+  color: var(--ctp-mocha-subtext0);
+}
+
+header {
+  background-color: var(--ctp-mocha-crust);
+  width: 100%;
+  margin: 0;
+
+  & > hgroup {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+
+    & > * {
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  background-color: var(--ctp-mocha-mantle);
+
+  & ul {
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & > li {
+      display: inline;
+      text-decoration: none;
+    }
+  }
+}
+
+footer {
+  background-color: var(--ctp-mocha-crust);
+  color: var(--ctp-mocha-subtext0);
+  width: 100%;
+  padding: 1rem;
+
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer svg {
+  /* Ensure the SVG itself has the correct color value */
+  color: inherit;
+}
+
+footer svg path {
+  /* Force the path to use the parent's color property */
+  fill: currentColor !important;
+}
+
+/* Main Content */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  max-width: min(100%, 800px);
+  flex-grow: 1;
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-indent: 1.5rem;
+  }
+}
+
+object {
+  display: block;
+  margin: 0 auto;
+  object-fit: fill;
+  max-width: 100%;
+}
+
+ol.carousel-container {
+  max-width: min(100%, 500px);
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  overflow-x: auto;
+  aspect-ratio: 4 / 5;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; /* Ensures smooth transitions when navigating */
+  -webkit-overflow-scrolling: touch; /* Optimizes mobile performance */
+
+  & > li {
+    width: 100%;
+    scroll-snap-align: start;
+    display: inline;
+    & > img {
+      height: 100%;
+    }
+  }
+}
